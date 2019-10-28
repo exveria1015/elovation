@@ -55,7 +55,7 @@
   </div>
 
   <div class="span6">
-    <h2>Recent Games</h2>
+    <h2>最近のゲーム</h2>
     <ul id='results'>
       <% @player.results.for_game(@game).limit(15).order('created_at desc').each do |result| %>
         <li>
@@ -71,7 +71,7 @@
             Lost to <strong><%= result.winners.map(&:name).join(", ") %></strong>
           <% end %>
           <% if result.most_recent? -%>
-            <%= link_to "Delete", game_result_path(@game, result), class: "btn btn-danger", method: :delete, confirm: "Are you sure?" %>
+            <%= link_to "削除", game_result_path(@game, result), class: "btn btn-danger", method: :delete, confirm: "本当によろしいですか？" %>
           <% end -%>
         </li>
       <% end %>
@@ -83,4 +83,3 @@
   <h2>Progress</h2>
     <%= line_chart @chart_data, min: nil, max: nil, xtitle: 'Matches', ytitle: @game.rating_type.capitalize %>
 </div>
-
