@@ -9,7 +9,7 @@
         <%= select "result[teams][#{index}]", :relation, ["defeats", "ties"], {} %>
       <% else %>
         <%= hidden_field_tag "result[teams][#{index}][relation]", :defeats, {} %>
-        Defeats:
+        敗北:
       <% end %>
     <% end %>
   <% end %>

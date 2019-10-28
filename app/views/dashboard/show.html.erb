@@ -1,8 +1,8 @@
-<div class="row-fluid">
+	<div class="row-fluid">
 
 	<div class='span8'>
 		<h1><%= brand_title %> Games</h1>
-		<%= link_to "New Game", new_game_path, class: "btn btn-primary" %>
+		<%= link_to "新規ゲーム", new_game_path, class: "btn btn-primary" %>
 
 		<ul id='games-list'>
 		<% @games.each do |game| %>
@@ -10,16 +10,16 @@
 		    <%= link_to game_path(game) do %>
 		    	<h3 class='game-title'><%= game.name %></h3>
 		    	<ul class='game-params'>
-  		    	<li class='rating-type'><%= game.rating_type %> – <%= game.allow_ties ? 'Ties allowed' : 'No ties' %></li>
-            <li class='num-players'><%= game.players.length %> players</li>
-            <li class='games-played'><%= game.results.length %> games played</li>
+  		    	<li class='rating-type'><%= game.rating_type %> – <%= game.allow_ties ? '引き分け:有効' : '引き分け:無効' %></li>
+            <li class='num-players'><%= game.players.length %> 人のプレイヤーが参加</li>
+            <li class='games-played'><%= game.results.length %> 回のゲームをプレイ</li>
 
 		    	</ul>
 
           <% result = game.recent_results.limit(1).first %>
           <% if result %>
             <div class='recent-result'>
-              <h4>Last game</h4>
+              <h4>最後のゲーム</h4>
               <div class='description'>
 
                 <% result.teams.each_with_index do |team, i| %>
@@ -52,7 +52,7 @@
 	<div class='span4'>
 		<div class='well'>
 			<h2>Players</h2>
-			<%= link_to "New Player", new_player_path, class: "btn" %>
+			<%= link_to "新規プレイヤー", new_player_path, class: "btn" %>
 
 			<ul id='players-list'>
 				<% @players.each do |player| %>
