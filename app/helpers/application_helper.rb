@@ -11,6 +11,6 @@ module ApplicationHelper
   end
 
   def brand_title
-    ENV["ELOVATION_TITLE"] || "Elovation"
+    ENV["ELOVATION_TITLE"] || "電脳戦機バーチャロン ランクマッチボード"
   end
 end

@@ -4,12 +4,12 @@
 
 <div class="row">
   <div class="span6">
-    <h2>Head-to-Head Records</h2>
+    <h2>接戦記録</h2>
     <table id='ratings'>
       <thead>
         <tr>
-          <th>Player</th>
-          <th>Rating</th>
+          <th>プレイヤー</th>
+          <th>レーティング</th>
           <th><abbr title='Wins'>W</abbr></th>
           <th><abbr title='Losses'>L</abbr></th>
           <% if @game.allow_ties %>
@@ -80,6 +80,6 @@
 </div>
 
 <div class="row">
-  <h2>Progress</h2>
+  <h2>進歩</h2>
     <%= line_chart @chart_data, min: nil, max: nil, xtitle: 'Matches', ytitle: @game.rating_type.capitalize %>
 </div>

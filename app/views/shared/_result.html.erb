@@ -9,9 +9,9 @@
 
     <% if i == 0 %>
       <% if result.tie? %>
-        <small>ties</small>
+        <small>引き分け</small>
       <% else %>
-        <small>defeats</small>
+        <small>敗北</small>
       <% end %>
     <% end %>
   <% end %>
@@ -23,6 +23,6 @@
   <time><%= format_time(result.created_at) %></time>
 
   <% if result.most_recent? -%>
-    <%= link_to "Delete", game_result_path(result.game, result), class: "btn btn-danger", method: :delete, confirm: "Are you sure?" %>
+    <%= link_to "削除", game_result_path(result.game, result), class: "btn btn-danger", method: :delete, confirm: "本当によろしいですか？" %>
   <% end -%>
 </li>

@@ -6,10 +6,10 @@
 
     <% if index != @result.teams.size - 1 %>
       <% if @game.allow_ties %>
-        <%= select "result[teams][#{index}]", :relation, ["defeats", "ties"], {} %>
+        <%= select "result[teams][#{index}]", :relation, ["勝敗", "引き分け"], {} %>
       <% else %>
         <%= hidden_field_tag "result[teams][#{index}][relation]", :defeats, {} %>
-        敗北:
+        Defeats:
       <% end %>
     <% end %>
   <% end %>
