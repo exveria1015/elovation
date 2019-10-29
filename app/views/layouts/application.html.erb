@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> <%= brand_title %> Games</title>
+  <title> <%= 電脳戦機バーチャロン%>ランクマッチボード</title>
   <meta name='apple-mobile-web-app-capable' content='yes' />
   <meta name='apple-mobile-web-app-status-bar-style' content='black' />
   <meta name='viewport', content='width = device-width, initial-scale = 1, maximum-scale = 1, user-scalable = yes' />
@@ -18,7 +18,7 @@
     <header>
       <%= link_to root_path, class: "brand" do %>
         <div class='brand-name'><%= brand_title %></div>
-        <div class='brand-label'>ホーム</div>
+        <div class='brand-label'>Home</div>
       <% end %>
     </header>
 
@@ -26,7 +26,7 @@
       <%= yield %>
     </div>
   </div>
-  <% if brand_title != "電脳戦機バーチャロン ランクマッチボード" %>
+  <% if brand_title != "VO Rankmatch Board" %>
     <div class="footer">Powered by Elovation</div>
   <% end %>
 </body>
